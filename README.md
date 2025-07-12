@@ -36,6 +36,8 @@ Advanced constraints, such as `CHECK`, `UNIQUE`, and `DEFAULT` values, are utili
 ### Topic 1: Customer
 **Query 1:** Retrieve **customer orders** with names, order IDs, product details, quantities, and prices, ordered by customer, order, and product
 
+**Chi tiết từng đơn Order**
+
 <img width="623" height="298" alt="image" src="https://github.com/user-attachments/assets/8d1790ee-9446-4f44-bc9a-0bafd8db16ff" />
 
 
@@ -88,7 +90,8 @@ Advanced constraints, such as `CHECK`, `UNIQUE`, and `DEFAULT` values, are utili
 
 **Khách hàng mua có hỗ trợ thẻ khuyến mãi có quay lại mua không?**
 
-<img width="276" height="161" alt="Screenshot 2025-07-12 161625" src="https://github.com/user-attachments/assets/6c29cfa9-825a-49ca-be15-100a2fa69dde" />
+<img width="1029" height="118" alt="Screenshot 2025-07-12 160650" src="https://github.com/user-attachments/assets/3a7901d5-426d-422c-9739-dd207475a295" />
+
 
 **Query 4.1:** Retrieve group all completed payments by payment method (Credit Card Only, Gift Card Only, or both), calculate the total amount paid for each group
 
@@ -100,13 +103,13 @@ Advanced constraints, such as `CHECK`, `UNIQUE`, and `DEFAULT` values, are utili
 ### Topic 5: Order --> Payment --> Shipping
 **Query 5:** Retrieve average time from order to shipping 
 
-<img width="213" height="48" alt="Screenshot 2025-07-12 161414" src="https://github.com/user-attachments/assets/ac40eb48-c65d-479f-9c1b-c44e2faa12b8" />
+<img width="195" height="40" alt="Screenshot 2025-07-12 161530" src="https://github.com/user-attachments/assets/d44275b7-12dc-4f57-9918-7d647fd65772" />
 
 *Số liệu sẽ dễ đánh giá hơn trong bộ dữ liệu lớn thực tế, gồm nhiều tỉnh thành khác nhau*
 
 **Query 5.2** Retrieve average total time by City
 
-<img width="195" height="40" alt="Screenshot 2025-07-12 161530" src="https://github.com/user-attachments/assets/d44275b7-12dc-4f57-9918-7d647fd65772" />
+<img width="276" height="161" alt="Screenshot 2025-07-12 161625" src="https://github.com/user-attachments/assets/60d7df80-1898-4c62-a6e4-e2f0fc7ed0e3" />
 
 *Số liệu sẽ dễ đánh giá hơn trong bộ dữ liệu lớn thực tế, gồm nhiều tỉnh thành khác nhau*
 
