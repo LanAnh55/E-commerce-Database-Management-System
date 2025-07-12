@@ -28,7 +28,7 @@ Each table has been carefully designed with appropriate foreign key constraints,
 <img width="2113" height="1636" alt="ERD" src="https://github.com/user-attachments/assets/75ccd440-8376-4962-8e23-f489a7d86b8e" />
 
 ## SQL Implementation Details
-The Microsoft SQL Management Server implementation includes **triggers** for automated enforcement of business rules. For example, **stock levels** are **updated automatically** upon order placement or restocking. Other triggers **validate payment** consistency and **restrict incorrect data** entries into sensitive tables like `CreditCardPayments` and `GiftCardPayments`.
+The Microsoft SQL Management Server implementation includes **TRIGGERS** for automated enforcement of business rules. For example, **stock levels** are **updated automatically** upon order placement or restocking. Other triggers **validate payment** consistency and **restrict incorrect data** entries into sensitive tables like `CreditCardPayments` and `GiftCardPayments`.
 
 Advanced constraints, such as `CHECK`, `UNIQUE`, and `DEFAULT` values, are utilized to ensure data quality and reduce manual error handling.
 
