@@ -24,8 +24,8 @@ The relational schema consists of **15 normalized tables** covering all core fun
 Each table has been carefully designed with appropriate foreign key constraints, indexes, and data validation rules to maintain referential integrity and enhance query performance.
 
 ## ERD Diagram
-<img width="2113" height="1636" alt="ERD" src="https://github.com/user-attachments/assets/8ec270a5-4357-4b30-84ac-c36a3255405c" />
 
+<img width="2113" height="1636" alt="ERD" src="https://github.com/user-attachments/assets/75ccd440-8376-4962-8e23-f489a7d86b8e" />
 
 ## SQL Implementation Details
 The Microsoft SQL Management Server implementation includes **triggers** for automated enforcement of business rules. For example, **stock levels** are **updated automatically** upon order placement or restocking. Other triggers **validate payment** consistency and **restrict incorrect data** entries into sensitive tables like `CreditCardPayments` and `GiftCardPayments`.
@@ -36,73 +36,77 @@ Advanced constraints, such as `CHECK`, `UNIQUE`, and `DEFAULT` values, are utili
 ### Topic 1: Customer
 **Query 1:** Retrieve **customer orders** with names, order IDs, product details, quantities, and prices, ordered by customer, order, and product
 
-<img width="618" height="379" alt="image" src="https://github.com/user-attachments/assets/6964025e-edc2-4189-84a4-b1b4b6556f3b" />
+<img width="623" height="298" alt="image" src="https://github.com/user-attachments/assets/8d1790ee-9446-4f44-bc9a-0bafd8db16ff" />
+
 
 **Query 1.1:** Retrieve customer’s ID, full name, the total sales, average order value, and the number of orders *for each customer*
 
 **Nhóm khách hàng nào có lượt mua và mức chi tiêu cao nhất ?**
 
-<img width="543" height="240" alt="image" src="https://github.com/user-attachments/assets/25b44252-17ee-4001-8904-b3ea5ebb3036" />
+<img width="542" height="298" alt="image" src="https://github.com/user-attachments/assets/1e233e10-44ee-43c8-999a-2152714ac058" />
+
 
 **Query 1.2:** Retrieve the total number of purchases and the total amount spent for *each shipping city*
 
 **Khu vực quận huyện nào có lượt mua và mức chi tiêu cao nhất ?**
 
-<img width="351" height="162" alt="image" src="https://github.com/user-attachments/assets/e6a42b7f-07e3-435a-9975-d4fad5251d18" />
+<img width="351" height="162" alt="Screenshot 2025-07-12 154756" src="https://github.com/user-attachments/assets/1bafd960-0a9b-4712-b4d3-93028a2a3fdb" />
+
 
 ### Topic 2: Product / Category 
 **Query 2:** Retrieve total revenue and quantity sold by *product Category*
 
 **Loại hàng nào được ưa chuộng nhất ?**
 
-<img width="364" height="205" alt="image" src="https://github.com/user-attachments/assets/dc608d54-50f5-4868-bb09-e930aba527ca" />
+<img width="364" height="205" alt="Screenshot 2025-07-12 155055" src="https://github.com/user-attachments/assets/f90c0576-fb38-49a6-bc98-ce2c7eb69e5b" />
 
 **Query 2.1:** Retrieve the *top 5 products* by total sales amount, including the total quantity sold and the total revenue generated
 
 **Sản phẩm nào được ưa chuộng nhất ?**
 
-<img width="417" height="120" alt="image" src="https://github.com/user-attachments/assets/ddf7a03c-2bd6-4bde-8413-d893e0e10802" />
+<img width="415" height="126" alt="Screenshot 2025-07-12 155702" src="https://github.com/user-attachments/assets/73e4f9c4-554b-4c11-aae3-89a176f078e3" />
 
 **Query 2.2:** Retrieve average customer feedback rating for each product
 
 **Sản phẩm nào được đánh giá thấp nhất, cần cải thiện ?**
 
-<img width="391" height="161" alt="image" src="https://github.com/user-attachments/assets/2539bf20-129c-48d2-9f65-832583466517" />
+<img width="391" height="161" alt="Screenshot 2025-07-12 172714" src="https://github.com/user-attachments/assets/5fb4032d-7556-49f8-ae59-6ce8d4a06acf" />
 
 ### Topic 3: Inventory
 **Query 3:** Retrieve the product ID, product name, and *current stock quantity (units_in_stock)* for all products
 
 **Kiểm soát mức tồn kho của từng mặt hàng**
 
-<img width="415" height="126" alt="image" src="https://github.com/user-attachments/assets/219f4880-8471-42bb-98da-d53b2904f5e6" />
+<img width="302" height="225" alt="image" src="https://github.com/user-attachments/assets/0ed44b48-4d0b-4250-9052-a7b8657b75aa" />
 
 **Query 3.1:** Calculate the **stock remaining** after fulfilling all orders
 
-<img width="527" height="160" alt="image" src="https://github.com/user-attachments/assets/2ba9b982-980c-4795-99a3-6504101315b3" />
+<img width="527" height="160" alt="Screenshot 2025-07-12 155841" src="https://github.com/user-attachments/assets/fabfae2d-1151-4cc6-8a05-ff4405ab8418" />
 
 ### Topic 4: Payment method 
 **Query 4:** Retrieve orders that have both credit card and gift card payments and how much they paid through each payment method
 
 **Khách hàng mua có hỗ trợ thẻ khuyến mãi có quay lại mua không?**
 
-<img width="1029" height="118" alt="image" src="https://github.com/user-attachments/assets/c87b6b55-da4c-4324-9b28-2591d29bf0b6" />
+<img width="276" height="161" alt="Screenshot 2025-07-12 161625" src="https://github.com/user-attachments/assets/6c29cfa9-825a-49ca-be15-100a2fa69dde" />
 
 **Query 4.1:** Retrieve group all completed payments by payment method (Credit Card Only, Gift Card Only, or both), calculate the total amount paid for each group
 
 **Số tiền mà Gift CARD hỗ trợ có chiếm phần lớn không?, nếu có thì sẽ cần điều chỉnh**
 
-<img width="367" height="78" alt="image" src="https://github.com/user-attachments/assets/716649a3-b0eb-4cd0-88bb-ec4a227a5e40" />
+<img width="367" height="78" alt="Screenshot 2025-07-12 171543" src="https://github.com/user-attachments/assets/2c5a7fc9-9b94-49df-8509-9f44d7d557b0" />
+
 
 ### Topic 5: Order --> Payment --> Shipping
 **Query 5:** Retrieve average time from order to shipping 
 
-<img width="195" height="40" alt="image" src="https://github.com/user-attachments/assets/67623810-eeb3-4b09-a1bc-449e87f9c73d" />
+<img width="213" height="48" alt="Screenshot 2025-07-12 161414" src="https://github.com/user-attachments/assets/ac40eb48-c65d-479f-9c1b-c44e2faa12b8" />
 
 *Số liệu sẽ dễ đánh giá hơn trong bộ dữ liệu lớn thực tế, gồm nhiều tỉnh thành khác nhau*
 
 **Query 5.2** Retrieve average total time by City
 
-<img width="276" height="161" alt="image" src="https://github.com/user-attachments/assets/19ee9953-7537-43a4-8800-27ef7b1e100e" />
+<img width="195" height="40" alt="Screenshot 2025-07-12 161530" src="https://github.com/user-attachments/assets/d44275b7-12dc-4f57-9918-7d647fd65772" />
 
 *Số liệu sẽ dễ đánh giá hơn trong bộ dữ liệu lớn thực tế, gồm nhiều tỉnh thành khác nhau*
 
